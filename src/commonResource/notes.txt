@@ -1,0 +1,53 @@
+// AIzaSyD9i7KIkff75m7VHFwnxF - jrBWWINZT0OI; API KEY
+// URL: https://www.googleapis.com/youtube/v3/videos?id=7lCDEYXw3mM&key=YOUR_API_KEY
+//  &part=snippet,contentDetails,statistics,status
+
+//rapidapi.com/blog/directory/netflix/
+
+// new project api  //
+// AIzaSyBGmuqkylWdbZAe22JqPQaGiF9fZzVttn4
+
+https: "https://youtube.googleapis.com/youtube/v3/channels?part=id&key=[AIzaSyBGmuqkylWdbZAe22JqPQaGiF9fZzVttn4]";
+
+("https://youtube.googleapis.com/youtube/v3/channels?part=id&forUsername=apple&key=AIzaSyBGmuqkylWdbZAe22JqPQaGiF9fZzVttn4");
+
+// "id": "UCE_M8A5yxnLfW0KghEeajjw" apple id
+
+
+
+  https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=UCE_M8A5yxnLfW0KghEeajjw&maxResults=10&order=date&key=AIzaSyBGmuqkylWdbZAe22JqPQaGiF9fZzVttn4
+
+
+
+
+
+
+
+  https://youtube.googleapis.com/youtube/v3/search?part=snippet&channelId=UCE_M8A5yxnLfW0KghEeajjw&maxResults=10&order=date&key=AIzaSyBGmuqkylWdbZAe22JqPQaGiF9fZzVttn4
+
+
+
+            {youtubeVideos.map((singleVideo, i)=>{
+              let vidId=singleVideo.id.videoId;
+              let vidLink=`https://youtube.googleapis.com/youtube/v3/Watch?v=${vidId}`;
+              let videoWrapper=(
+                <div key={i} className="col-sm-12 col-md-6 col-lg-4">
+                  <div className="singleVideoWrapper">
+                    <div className="videoThumbnail">
+                      <a href={vidLink} target="_blank" rel="noreferrer"><img src={singleVideo.snippet.thumbnails.high.url} alt="thumbnails" /> </a>
+                      </div>
+                    <div className="videoInfoWrapper"> 
+                      <div className="VideoTitle">
+                        <a href={vidLink} target="_blank" rel="noreferrer">
+                          {singleVideo.snippet.title}
+                        </a>
+                      </div>
+                      <div className="videoDesc">
+                      {singleVideo.snippet.description}
+                      </div>
+                      </div>
+                      </div>
+                      </div>
+              );
+                      return videoWrapper;
+            })}
